@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KingfisherWebP'
-  s.version          = '0.1.0'
+  s.version          = '1.0.0'
   s.summary          = 'A short description of KingfisherWebP.'
 
 # This description is used to generate tags and improve search results.
@@ -21,22 +21,33 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/duzhongjieqiji@163.com/KingfisherWebP'
+  s.homepage         = 'https://github.com/duzhongjieqiji/KingfisherWebPTool'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'duzhongjieqiji@163.com' => 'qiji@ksjgs.com' }
-  s.source           = { :git => 'https://github.com/duzhongjieqiji@163.com/KingfisherWebP.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/duzhongjieqiji/KingfisherWebPTool', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+   s.ios.deployment_target = '8.0'
+  
+  s.pod_target_xcconfig = {'DEFINES_MODULE' => 'YES'}
 
   s.source_files = 'KingfisherWebP/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'KingfisherWebP' => ['KingfisherWebP/Assets/*.png']
-  # }
+  s.pod_target_xcconfig = {
+    'USER_HEADER_SEARCH_PATHS' => '$(inherited) $(SRCROOT)/libwebp/src'
+  }
+  s.tvos.pod_target_xcconfig = {
+    'USER_HEADER_SEARCH_PATHS' => '$(inherited) $(SRCROOT)/libwebp/src'
+  }
+  s.osx.pod_target_xcconfig = {
+    'USER_HEADER_SEARCH_PATHS' => '$(inherited) $(SRCROOT)/libwebp/src'
+  }
+  s.watchos.pod_target_xcconfig = {
+    'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) WEBP_USE_INTRINSICS=1',
+    'USER_HEADER_SEARCH_PATHS' => '$(inherited) $(SRCROOT)/libwebp/src'
+  }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'Kingfisher'
+  s.dependency 'libwebp'
+  
 end

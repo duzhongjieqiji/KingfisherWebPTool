@@ -1,0 +1,6 @@
+framework module Pods_KingfisherWebP_Example {
+  umbrella header "Pods-KingfisherWebP_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

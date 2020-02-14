@@ -1,0 +1,35 @@
+PODS:
+  - Kingfisher (4.10.1)
+  - KingfisherWebP (1.0.0):
+    - Kingfisher
+    - libwebp
+  - libwebp (1.1.0):
+    - libwebp/demux (= 1.1.0)
+    - libwebp/mux (= 1.1.0)
+    - libwebp/webp (= 1.1.0)
+  - libwebp/demux (1.1.0):
+    - libwebp/webp
+  - libwebp/mux (1.1.0):
+    - libwebp/demux
+  - libwebp/webp (1.1.0)
+
+DEPENDENCIES:
+  - KingfisherWebP (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - Kingfisher
+    - libwebp
+
+EXTERNAL SOURCES:
+  KingfisherWebP:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  KingfisherWebP: deef3dea4f360ae654ecde4daaae6f431592cd77
+  libwebp: 946cb3063cea9236285f7e9a8505d806d30e07f3
+
+PODFILE CHECKSUM: 0078de15f980db09f55448cfd743bf95e7495acc
+
+COCOAPODS: 1.8.4
